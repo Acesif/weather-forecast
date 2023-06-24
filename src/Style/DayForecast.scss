@@ -1,0 +1,15 @@
+.forecast{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 10%;
+    margin-left: 30%;
+    .day-temp{
+        display: flex;
+        gap: 10px;
+        >*{
+            margin: 2px;
+            padding: 0;
+        }
+    }
+}

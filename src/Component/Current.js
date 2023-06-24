@@ -8,7 +8,7 @@ const Current = () => {
       <div className='current'>
         <div className="temperature">
             <div id='current-temp'>
-                <h2>{data?.current.temp_c}</h2>
+                <h2>{data?.current.temp_c}&deg;C</h2>
             </div>
             <div id='current-weather'>{data?.current.condition.text}</div>
             <div id='current-city'>{data?.location.name}</div>

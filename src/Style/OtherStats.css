@@ -1,0 +1,21 @@
+.other-stats, .other-stats > * {
+  display: flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.other-stats > * {
+  flex-direction: column;
+  border: 1px rgba(0, 0, 0, 0.5) solid;
+  border-radius: 10px;
+  padding: 6px;
+}
+
+.other-stats {
+  margin-top: 2.5rem;
+  gap: 1.5rem;
+}
+.other-stats .title {
+  font-weight: bold;
+}/*# sourceMappingURL=OtherStats.css.map */
