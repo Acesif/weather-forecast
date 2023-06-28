@@ -4,6 +4,22 @@ import { context } from '../App'
 const Search = () => {
   const [data,setData] = useContext(context)
   const [searchInput,setSearchInput] = useState("Dhaka")
+  const setBG = (bg) => {
+    const backgnd = document.querySelector(".App")
+    if(bg.toLowerCase().includes("cloudy")){
+      backgnd.classList.add("cloudy")
+    }
+    else if(bg.toLowerCase().includes("rain" || "rainy")){
+      backgnd.classList.add("rainy")
+    }
+    else if(bg.toLowerCase().includes("sunny")){
+      backgnd.classList.add("sunny")
+    }
+    if(bg.toLowerCase().includes("thunder")){
+      backgnd.classList.remove("rainy")
+      backgnd.classList.add("thunder")
+    }
+  }
   const getData = async (city) => {
     const data = await fetch(`http://api.weatherapi.com/v1/forecast.json?key=643a62b99a514ecca3f165949230706&q=${city}&days=1&aqi=no&alerts=no`)
     const response = await data.json()
@@ -14,6 +30,7 @@ const Search = () => {
     }
     else{
       setData(response)
+      setBG(await response.current.condition.text)
       document.querySelector("input").value = ""
     }
   }

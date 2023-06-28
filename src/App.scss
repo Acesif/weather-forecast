@@ -5,8 +5,32 @@
 }
 .App{
     background-color: rgb(244, 244, 150);
+    background-repeat: no-repeat;
+    background-size: cover;
     height: 100vh;
     width: 100%;
+    button{
+        transition: all 0.2s ease-in-out;
+        color: black;
+        border: 1px solid black;
+    }
+}
+.cloudy{
+    background-image: url(./images/cloudy.gif);
+}
+.rainy{
+    background-image: url(./images/rainy.gif);
+    color: white;
+    button{
+        color: white;
+        border: 1px solid white;
+    }
+}
+.sunny{
+    background-image: url(./images/sunny.gif);
+}
+.thunder{
+    background-image: url(./images/thunderstorm.gif);
 }
 @media (min-width: 768px){
     .navbar{

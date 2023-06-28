@@ -8,7 +8,7 @@ const OtherStats = () => {
         <div className='other-stats'>
             <div className='humidity'>
                 <span className='title'>Humidity</span>
-                <span>{data?.current.humidity}</span>
+                <span>{data?.current.humidity}%</span>
             </div>
             <div className='wind-speed'>
                 <span className='title'>Wind Speed</span>
