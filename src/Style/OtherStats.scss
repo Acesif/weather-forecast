@@ -17,3 +17,13 @@
         font-weight: bold;
     }
 }
+@media (min-width: 820px){
+    .other-stats{
+        margin-top: 5rem;
+        gap: 5rem;
+        >*{
+            font-size: 20px;
+            padding: 1rem 2rem;
+        }
+    }
+}

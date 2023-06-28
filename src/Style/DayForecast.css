@@ -3,13 +3,29 @@
   flex-direction: column;
   justify-content: center;
   margin-top: 10%;
-  margin-left: 30%;
+  margin-left: 28%;
 }
 .forecast .day-temp {
   display: flex;
-  gap: 10px;
+  gap: 0.625rem;
 }
 .forecast .day-temp > * {
-  margin: 2px;
+  margin: 0.125rem;
   padding: 0;
+}
+
+@media (min-width: 820px) {
+  .forecast {
+    font-size: 1.5625rem;
+    margin-top: 10%;
+    margin-left: 35%;
+  }
+  .forecast .day-temp {
+    display: flex;
+    gap: 0.625rem;
+  }
+  .forecast .day-temp > * {
+    margin: 0.125rem;
+    padding: 0;
+  }
 }/*# sourceMappingURL=DayForecast.css.map */

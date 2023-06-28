@@ -3,13 +3,28 @@
     flex-direction: column;
     justify-content: center;
     margin-top: 10%;
-    margin-left: 30%;
+    margin-left: 28%;
     .day-temp{
         display: flex;
-        gap: 10px;
+        gap: .625rem;
         >*{
-            margin: 2px;
+            margin: .125rem;
             padding: 0;
+        }
+    }
+}
+@media (min-width: 820px){
+    .forecast{
+        font-size: 1.5625rem;
+        margin-top: 10%;
+        margin-left: 35%;
+        .day-temp{
+            display: flex;
+            gap: .625rem;
+            >*{
+                margin: .125rem;
+                padding: 0;
+            }
         }
     }
 }

@@ -3,14 +3,14 @@ import { context } from '../App'
 
 const Search = () => {
   const [data,setData] = useContext(context)
-  const [searchInput,setSearchInput] = useState("london")
+  const [searchInput,setSearchInput] = useState("Dhaka")
   const getData = async (city) => {
     const data = await fetch(`http://api.weatherapi.com/v1/forecast.json?key=643a62b99a514ecca3f165949230706&q=${city}&days=1&aqi=no&alerts=no`)
     const response = await data.json()
     if(await response.error?.code === 1006){
-      alert("Error")
+      alert("Invalid City Name")
       document.querySelector("input").value = ""
-      setSearchInput("london")
+      setSearchInput("Dhaka")
     }
     else{
       setData(response)

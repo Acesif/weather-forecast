@@ -8,4 +8,17 @@
   background-color: rgb(244, 244, 150);
   height: 100vh;
   width: 100%;
+}
+
+@media (min-width: 820px) {
+  .navbar {
+    height: 15vh;
+  }
+  .navbar form {
+    height: 50px;
+    width: 60%;
+  }
+  .navbar form > * {
+    font-size: 20px;
+  }
 }/*# sourceMappingURL=App.css.map */
