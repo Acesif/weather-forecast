@@ -1,9 +1,11 @@
 .forecast {
+  overflow-y: scroll;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-top: 10%;
-  margin-left: 28%;
+  align-items: center;
+  font-size: 12px;
+  margin-top: 5vh;
 }
 .forecast .day-temp {
   display: flex;
@@ -14,11 +16,10 @@
   padding: 0;
 }
 
-@media (min-width: 820px) {
+@media (min-width: 768px) {
   .forecast {
-    font-size: 1.5625rem;
-    margin-top: 10%;
-    margin-left: 35%;
+    font-size: 1.3rem;
+    margin-top: 5rem;
   }
   .forecast .day-temp {
     display: flex;
@@ -27,5 +28,35 @@
   .forecast .day-temp > * {
     margin: 0.125rem;
     padding: 0;
+  }
+}
+@media (min-width: 1024px) {
+  .forecast {
+    height: 35vh;
+    margin-top: 2.5rem;
+    flex-direction: row;
+    gap: 1rem;
+  }
+  .forecast > *:not(:first-child, :last-child) {
+    border-left: 1px solid black;
+  }
+  .forecast > *:last-child {
+    border-left: 1px solid black;
+  }
+  .forecast .day-temp {
+    flex-direction: column;
+  }
+  .forecast .day-temp p {
+    margin-left: 1rem;
+    text-align: center;
+  }
+  .forecast .day-temp .hide-on-wide {
+    opacity: 0;
+  }
+  .forecast .day-temp .time-block {
+    display: block;
+  }
+  .forecast .day-temp .time-block > * {
+    display: inline;
   }
 }/*# sourceMappingURL=DayForecast.css.map */
