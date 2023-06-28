@@ -5,23 +5,30 @@ const Search = () => {
   const [data,setData] = useContext(context)
   const [searchInput,setSearchInput] = useState("london")
   const getData = async (city) => {
-    const data = await fetch(`http://api.weatherapi.com/v1/forecast.json?key=643a62b99a514ecca3f165949230706&q=${searchInput}&days=1&aqi=no&alerts=no`)
+    const data = await fetch(`http://api.weatherapi.com/v1/forecast.json?key=643a62b99a514ecca3f165949230706&q=${city}&days=1&aqi=no&alerts=no`)
     const response = await data.json()
-    setData(response)
+    if(await response.error?.code === 1006){
+      alert("Error")
+      document.querySelector("input").value = ""
+      setSearchInput("london")
+    }
+    else{
+      setData(response)
+      document.querySelector("input").value = ""
+    }
   }
-  const HandleSearch = async (e) => {
+  const HandleSearch = (e) => {
     e.preventDefault()
     try {
-      getData()
+      getData(searchInput)
     } catch (error) {
     }
   }
   window.addEventListener("load",()=>{
-    getData()
+    getData(searchInput)
   })
   return (
     <div>
-      {console.log(data)}
         <nav className="navbar pt-4">
             <div className="container-fluid d-flex justify-content-center">
                 <form className="d-flex" role="search">
