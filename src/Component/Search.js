@@ -14,7 +14,6 @@ const Search = () => {
     try {
       getData()
     } catch (error) {
-      console.log(error)
     }
   }
   window.addEventListener("load",()=>{
