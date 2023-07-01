@@ -14,6 +14,13 @@
         color: black;
         border: 1px solid black;
     }
+    .toggle-unit{
+        width: 50px;
+        height: 50px;
+        position: fixed;
+        top: 60px;
+        right: 20px;
+    }
 }
 .cloudy{
     background-image: url(./images/cloudy.gif);
@@ -28,6 +35,11 @@
 }
 .sunny{
     background-image: url(./images/sunny.gif);
+    color: black;
+    button{
+        color: black;
+        border: 1px solid black;
+    }
 }
 .thunder{
     background-image: url(./images/thunderstorm.gif);

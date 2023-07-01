@@ -1,9 +1,15 @@
 import React, { useContext, useState } from 'react'
-import { context } from '../App'
+import { context, unitContext } from '../App'
 
 const Search = () => {
   const [data,setData] = useContext(context)
   const [searchInput,setSearchInput] = useState("Dhaka")
+  const [unit,setUnit] = useContext(unitContext)
+  const unitChange = (e) => {
+    e.preventDefault()
+    const toggledUnit = !unit
+    setUnit(toggledUnit)
+  }
   const setBG = (bg) => {
     const backgnd = document.querySelector(".App")
     if(bg.toLowerCase().includes("cloudy")){
@@ -56,6 +62,14 @@ const Search = () => {
                     type="submit"
                     >
                     Search
+                  </button>
+                  <button 
+                    className="btn btn-outline-success toggle-unit" 
+                    onClick={(e)=>unitChange(e)}
+                  >
+                    {
+                      unit? <p>&deg;C</p>:<p>&deg;F</p>
+                    }
                   </button>
                 </form>
             </div>

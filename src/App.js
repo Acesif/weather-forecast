@@ -6,7 +6,7 @@ import OtherStats from './Component/OtherStats';
 import DayForecast from './Component/DayForecast';
 
 export const context = createContext()
-export const unit = createContext()
+export const unitContext = createContext()
 function App() {
   const [data,setData] = useState()
   const [unit,setUnit] = useState(true)
@@ -19,7 +19,7 @@ function App() {
          <OtherStats/>
          <DayForecast/>
         </context.Provider>
-      <unitContext.Provider>
+      </unitContext.Provider>
     </div>
   );
 }
