@@ -1,9 +1,10 @@
 import React, { useContext } from 'react'
 import '../Style/OtherStats.css'
-import { context } from '../App'
+import { context, unitContext } from '../App'
 
 const OtherStats = () => {
     const [data,setData] = useContext(context)
+    const [unit,setUnit] = useContext(unitContext)
     return (
         <div className='other-stats'>
             <div className='humidity'>
@@ -12,11 +13,11 @@ const OtherStats = () => {
             </div>
             <div className='wind-speed'>
                 <span className='title'>Wind Speed</span>
-                <span>{data?.current.wind_kph} Km/h</span>
+                {unit?<span>{data?.current.wind_kph} Km/h</span>:<span>{data?.current.wind_mph} mph</span>}
             </div>
             <div className='pressure'>
                 <span className='title'>Pressure</span>
-                <span>{data?.current.pressure_mb} Mb</span>
+                {unit?<span>{data?.current.pressure_mb} Mb</span>:<span>{data?.current.pressure_in} In</span>}
             </div>
         </div>
     )

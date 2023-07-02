@@ -1,10 +1,12 @@
 import React, { useContext, useState } from 'react'
-import { context, unitContext } from '../App'
+import { context, loadContext, unitContext } from '../App'
 
 const Search = () => {
   const [data,setData] = useContext(context)
-  const [searchInput,setSearchInput] = useState("Dhaka")
   const [unit,setUnit] = useContext(unitContext)
+  const [load,setLoad] = useContext(loadContext)
+
+  const [searchInput,setSearchInput] = useState("Dhaka")
   const unitChange = (e) => {
     e.preventDefault()
     const toggledUnit = !unit
@@ -38,6 +40,7 @@ const Search = () => {
       setData(response)
       setBG(await response.current.condition.text)
       document.querySelector("input").value = ""
+      setLoad(true)
     }
   }
   const HandleSearch = (e) => {
@@ -48,6 +51,7 @@ const Search = () => {
     }
   }
   window.addEventListener("load",()=>{
+    setLoad(true)
     getData(searchInput)
   })
   return (

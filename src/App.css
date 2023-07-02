@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+.loading {
+  background-color: red;
+}
+
 .App {
   background-color: rgb(244, 244, 150);
   background-repeat: no-repeat;
