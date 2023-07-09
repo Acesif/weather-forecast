@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { context, loadContext, unitContext } from '../App'
 
 const Search = () => {
@@ -40,7 +40,7 @@ const Search = () => {
       setData(response)
       setBG(await response.current.condition.text)
       document.querySelector("input").value = ""
-      setLoad(true)
+      setLoad(false) 
     }
   }
   const HandleSearch = (e) => {
@@ -51,8 +51,7 @@ const Search = () => {
     }
   }
   window.addEventListener("load",()=>{
-    setLoad(true)
-    getData(searchInput)
+    getData(searchInput) 
   })
   return (
     <div>

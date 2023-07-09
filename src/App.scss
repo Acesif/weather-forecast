@@ -3,9 +3,6 @@
     padding: 0;
     box-sizing: border-box;
 }
-.loading{
-    background-color: red;
-}
 .App{
     background-color: rgb(244, 244, 150);
     background-repeat: no-repeat;
@@ -46,6 +43,14 @@
 }
 .thunder{
     background-image: url(./images/thunderstorm.gif);
+}
+.Loading{
+  height: 100vh;
+  width: 100%;
+  background-color: beige;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 @media (min-width: 768px){
     .navbar{
